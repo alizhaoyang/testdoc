@@ -1,0 +1,6 @@
+.attention {  
+    background-color: rgb(255, 0, 140); /* 设置背景颜色为黄色 */  
+    color: black; /* 设置文本颜色为黑色 */  
+    border: 1px solid black; /* 设置边框为1像素宽的黑色实线 */  
+    padding: 5px; /* 设置内边距为5像素，以使文本与边框之间有一些空间 */  
+}

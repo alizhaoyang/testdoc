@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>MACS 产品手册 &mdash; moffettdoc v1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/my_theme.css?v=5b4135ee" />
+      <link rel="stylesheet" type="text/css" href="../../_static/css/highlight.css?v=af260240" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../_static/documentation_options.js?v=5a3fd9cb"></script>
+        <script src="../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../genindex.html" />
+    <link rel="search" title="搜索" href="../../search.html" />
+    <link rel="next" title="发布日志" href="release_notes.html" />
+    <link rel="prev" title="MACS系统用户手册" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../index.html" class="icon icon-home">
+            moffettdoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">墨芯产品文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="index.html">MACS系统用户手册</a><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">MACS 产品手册</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#id1">概述</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id2">发布日志</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#id3">安装指南</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sola-toolkit">SOLA Toolkit 安装指南</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id4">工具</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#mx-smi">mx-smi 用户手册</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mx-qual">mx-qual 用户手册</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#mx-mft">mx-mft 用户手册</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id5">示例</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sola-runtime">SOLA Runtime 示例程序</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="#id6">云原生</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#sola">SOLA 容器化示例</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#moffett-kubernetes-device-plugin">MOFFETT Kubernetes Device Plugin 用户手册</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="release_notes.html">发布日志</a></li>
+<li class="toctree-l2"><a class="reference internal" href="installation/index.html">安装指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tool/index.html">工具</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sola-demo/index.html">SOLA示例验证手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="AI-Native/index.html">Moffett 云原生</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../index.html">moffettdoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="index.html">MACS系统用户手册</a></li>
+      <li class="breadcrumb-item active">MACS 产品手册</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../_sources/docs/macs-1.1/overview.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="macs">
+<h1>MACS 产品手册<a class="headerlink" href="#macs" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>概述<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>MACS（Moffett Advaned Computing System）是墨芯专为墨芯 AI 加速卡打造的一套 AI 计算加速系统，可以在墨芯 AI 加速卡上部署高性能模型推理应用。该系统主要包含 SOLA ToolKit（包含 AI 加速卡驱动和固件、SOLA Runtime API以及一些工具）。</p>
+</section>
+<hr class="docutils" />
+<section id="id2">
+<h2><a class="reference external" href="https://docs.moffettai.com/docs/macs-1.1/release_notes.html">发布日志</a><a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>该文档描述了 MACS 的发布信息。</p>
+</section>
+<hr class="docutils" />
+<section id="id3">
+<h2>安装指南<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="sola-toolkit">
+<h3><a class="reference external" href="https://docs.moffettai.com/docs/macs-1.1/installation/sola-toolkit-installation-guide.html">SOLA Toolkit 安装指南</a><a class="headerlink" href="#sola-toolkit" title="Link to this heading"></a></h3>
+<p>该指南介绍了如何在 Linux 系统下安装 SOLA Toolkit 。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id4">
+<h2>工具<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<section id="mx-smi">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/tool/smi-userguide.html">mx-smi 用户手册</a><a class="headerlink" href="#mx-smi" title="Link to this heading"></a></h3>
+<p>该手册介绍 mx-smi 工具的使用。</p>
+</section>
+<section id="mx-qual">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/tool/qual-userguide.html">mx-qual 用户手册</a><a class="headerlink" href="#mx-qual" title="Link to this heading"></a></h3>
+<p>该手册介绍 mx-qual 工具的使用。</p>
+</section>
+<section id="mx-mft">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/tool/mx-mft-userguide.html">mx-mft 用户手册</a><a class="headerlink" href="#mx-mft" title="Link to this heading"></a></h3>
+<p>该手册介绍 mx-mft 工具的使用。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id5">
+<h2>示例<a class="headerlink" href="#id5" title="Link to this heading"></a></h2>
+<section id="sola-runtime">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/sola-demo/SOLA-demo-overview.html">SOLA Runtime 示例程序</a><a class="headerlink" href="#sola-runtime" title="Link to this heading"></a></h3>
+<p>该文档包含了一些 SOLA Runtime API 的示例和一些模型部署的例子。</p>
+</section>
+</section>
+<hr class="docutils" />
+<section id="id6">
+<h2>云原生<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<section id="sola">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/AI-Native/SOLA-docker.html">SOLA 容器化示例</a><a class="headerlink" href="#sola" title="Link to this heading"></a></h3>
+<p>该文档包含 SOLA 容器化的示例。</p>
+</section>
+<section id="moffett-kubernetes-device-plugin">
+<h3><a class="reference external" href="http://10.1.20.94:8006/docs/macs-1.1/AI-Native/k8s-device-plugin/k8s-device-plugin.html">MOFFETT Kubernetes Device Plugin 用户手册</a><a class="headerlink" href="#moffett-kubernetes-device-plugin" title="Link to this heading"></a></h3>
+<p>该手册介绍了如何在 Kubernetes 集群中运行使用墨芯 AI 加速卡。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="MACS系统用户手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="release_notes.html" class="btn btn-neutral float-right" title="发布日志" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zhaoyang.li。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

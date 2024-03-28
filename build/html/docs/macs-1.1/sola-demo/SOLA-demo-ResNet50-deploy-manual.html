@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ResNet50 部署手册 &mdash; moffettdoc v1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/my_theme.css?v=5b4135ee" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/highlight.css?v=af260240" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5a3fd9cb"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="BERT 部署手册" href="SOLA-demo-BERT-deploy-manual.html" />
+    <link rel="prev" title="SOLA Runtime 示例程序" href="SOLA-demo-overview.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            moffettdoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">墨芯产品文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MACS系统用户手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">MACS 产品手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html">发布日志</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">安装指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tool/index.html">工具</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SOLA示例验证手册</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-overview.html">SOLA Runtime 示例程序</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">ResNet50 部署手册</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">概述</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">模型介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">环境依赖</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">流程介绍</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#predict-result">Predict result</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id6">性能</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-BERT-deploy-manual.html">BERT 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom7B-deploy-manual.html">BLOOM 7B 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom176B-deploy-manual.html">BLOOM 176B 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-GPT-J6B-deploy-manual.html">GPT-J 6B部署手册</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../AI-Native/index.html">Moffett 云原生</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">moffettdoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MACS系统用户手册</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SOLA示例验证手册</a></li>
+      <li class="breadcrumb-item active">ResNet50 部署手册</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/macs-1.1/sola-demo/SOLA-demo-ResNet50-deploy-manual.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="resnet50">
+<h1>ResNet50 部署手册<a class="headerlink" href="#resnet50" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>概述<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>本章节我们会演示如何使用 SOLA Runtime API 来开发一个简单的图片分类应用。</p>
+</section>
+<section id="id2">
+<h2>模型介绍<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<p>关于 resnet50 模型介绍可以参考 <a class="reference external" href="https://arxiv.org/abs/1512.03385">Deep Residual Learning for Image Recognition</a> 。</p>
+<p>有关输入输出的基本信息如下：</p>
+<ul class="simple">
+<li><p>Input: RGB 图片, 分辨率处理为 224 高 x 224 宽</p></li>
+<li><p>Output: 图片分类标签</p></li>
+<li><p>Batch size: 4</p></li>
+</ul>
+<p>参照 MLPerf Offline 模式的运行条件，我们会一次性加载所有图片，再进行分批推理。</p>
+<p>MLPref Offline ResNet-50 输入输出数据如下：</p>
+<ul class="simple">
+<li><p>总图片数量: 50000</p></li>
+<li><p>输入 query: [ 50000, 224, 224, 3 ] dtype=uint8, 以二进制格式保存</p></li>
+<li><p>输出 query: [ 50000, 1024 ] dtype=int64, 以二进制格式保存</p></li>
+</ul>
+</section>
+<section id="id3">
+<h2>环境依赖<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<p>以下为运行 ResNet50 所需要的环境依赖：</p>
+<ul class="simple">
+<li><p>编译器: g++ &gt;= 7.5</p></li>
+<li><p>Python 环境: numpy, opencv=4.8.1, tensorflow</p></li>
+</ul>
+</section>
+<section id="id4">
+<h2>流程介绍<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>部署模型分为四个步骤：下载、编译、运行、验证，每个步骤都提供了对应的默认脚本。</p>
+<p>下载：<code class="docutils literal notranslate"><span class="pre">prepare.sh</span></code></p>
+<p>编译：<code class="docutils literal notranslate"><span class="pre">build.sh</span></code></p>
+<p>运行：<code class="docutils literal notranslate"><span class="pre">run.sh</span></code></p>
+<p>验证：<code class="docutils literal notranslate"><span class="pre">verify.sh</span></code></p>
+<p>你也可以参考以下步骤手动部署模型。</p>
+<section id="id5">
+<h3>部署步骤<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ol>
+<li><p>下载模型和数据集</p>
+<p>可以执行以下脚本下载模型依赖，下载后会自动进行预处理：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./prepare.sh
+</pre></div>
+</div>
+<p>若脚本执行失败，也可以通过以下链接手动下载并解压：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>https://moffett-oss-bucket01.oss-cn-shenzhen.aliyuncs.com/sola-demo/resnet50/resnet50_demo.tar.gz<span class="w">   </span>
+</pre></div>
+</div>
+<p>并手动执行预处理命令（需要 python 环境，激活方式见主目录 README.md）</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-s<span class="w"> </span>scripts/gen.py<span class="w"> </span>--image_dir<span class="w"> </span>data/resnet50_demo/ILSVRC2012_img_val<span class="w"> </span>--val_map_path<span class="w"> </span>data/resnet50_demo/ILSVRC2012_validation_ground_truth_caffe.txt<span class="w"> </span>--cache_dir<span class="w"> </span>data/resnet50_demo/<span class="w"> </span>--duplicate<span class="w"> </span><span class="m">1</span>
+</pre></div>
+</div>
+</li>
+<li><p>编译部署代码</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh
+</pre></div>
+</div>
+</li>
+<li><p>运行</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="c1"># 默认只执行device 0</span>
+./run.sh
+</pre></div>
+</div>
+<p>在脚本中可以自行修改参数， <code class="docutils literal notranslate"><span class="pre">-d</span></code> 可以指定运行设备，<code class="docutils literal notranslate"><span class="pre">-f</span></code> 指定运行模式（broadcast/split）， <code class="docutils literal notranslate"><span class="pre">-c</span></code> 指定运行次数。</p>
+</li>
+<li><p>验证结果</p>
+<div class="highlight-BASH notranslate"><div class="highlight"><pre><span></span>./verify.sh
+</pre></div>
+</div>
+</li>
+</ol>
+<p>这是一个输出示例
+<img alt="../../../_images/hetland_sheepdog.JPEG" src="../../../_images/hetland_sheepdog.JPEG" /></p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Image</span> <span class="p">[</span>  <span class="mi">3</span><span class="p">]</span> <span class="n">Prediction</span> <span class="p">[</span><span class="mi">230</span><span class="p">]</span> <span class="n">Label</span> <span class="p">[</span><span class="mi">230</span><span class="p">]</span>
+</pre></div>
+</div>
+<blockquote>
+<div><p>比如根据 Imagenet2012 <strong>230</strong> 的标签为 <strong>hetland_sheepdog</strong></p>
+</div></blockquote>
+</section>
+</section>
+<section id="predict-result">
+<h2>Predict result<a class="headerlink" href="#predict-result" title="Link to this heading"></a></h2>
+<p>推理结果如下：</p>
+<p>SOLA resnet50 <strong>Imagenet2012 Validation Set</strong> 精度为 <strong>76.4280% 。</strong></p>
+</section>
+<section id="id6">
+<h2>性能<a class="headerlink" href="#id6" title="Link to this heading"></a></h2>
+<p>以下为基于 MOFFETT S4 的运行结果：</p>
+<p>| Model | Batch Size | INT8 QPS |
+| —– | ———- | ——– |
+| RN50  | 4          | 25014    |</p>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="SOLA-demo-overview.html" class="btn btn-neutral float-left" title="SOLA Runtime 示例程序" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="SOLA-demo-BERT-deploy-manual.html" class="btn btn-neutral float-right" title="BERT 部署手册" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zhaoyang.li。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

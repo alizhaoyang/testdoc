@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>GPT-J 6B部署手册 &mdash; moffettdoc v1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/my_theme.css?v=5b4135ee" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/highlight.css?v=af260240" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5a3fd9cb"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="Moffett 云原生" href="../AI-Native/index.html" />
+    <link rel="prev" title="BLOOM 176B 部署手册" href="SOLA-demo-bloom176B-deploy-manual.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            moffettdoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">墨芯产品文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MACS系统用户手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">MACS 产品手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html">发布日志</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">安装指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tool/index.html">工具</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SOLA示例验证手册</a><ul class="current">
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-overview.html">SOLA Runtime 示例程序</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-ResNet50-deploy-manual.html">ResNet50 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-BERT-deploy-manual.html">BERT 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom7B-deploy-manual.html">BLOOM 7B 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom176B-deploy-manual.html">BLOOM 176B 部署手册</a></li>
+<li class="toctree-l3 current"><a class="current reference internal" href="#">GPT-J 6B部署手册</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">GPT-J 6B模型简介</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id4">模型部署</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../AI-Native/index.html">Moffett 云原生</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">moffettdoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MACS系统用户手册</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SOLA示例验证手册</a></li>
+      <li class="breadcrumb-item active">GPT-J 6B部署手册</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/macs-1.1/sola-demo/SOLA-demo-GPT-J6B-deploy-manual.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="gpt-j-6b">
+<h1>GPT-J 6B部署手册<a class="headerlink" href="#gpt-j-6b" title="Link to this heading"></a></h1>
+<section id="id1">
+<h2>GPT-J 6B模型简介<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>GPT-J 6B是一个由EleutherAI研究小组创建的开源自回归语言模型。它是OpenAI的GPT-3的最先进替代品之一，在各种自然语言任务（如聊天、摘要和问答等）方面表现良好。</p>
+<p>本文档介绍如何在 MOFFETT AI加速卡上利用 SOLA 部署 GPT-J 6B 模型。</p>
+<section id="id2">
+<h3>模型配置<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>num_layers: 28</p></li>
+<li><p>num_heads: 16</p></li>
+<li><p>hidden_size: 4096</p></li>
+<li><p>vocab_size: 50401</p></li>
+<li><p>batch_size: 8</p></li>
+<li><p>token_num: 32</p></li>
+<li><p>max_seq_len: 256</p></li>
+</ul>
+</section>
+<section id="id3">
+<h3>系统要求<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p>至少 1 个 MOFFETT Antoum 芯片</p></li>
+<li><p>支持 avx512f 的 CPU</p></li>
+</ul>
+</section>
+</section>
+<section id="id4">
+<h2>模型部署<a class="headerlink" href="#id4" title="Link to this heading"></a></h2>
+<p>部署模型分为四个步骤：下载、编译、运行、验证，每个步骤都提供了对应的默认脚本。</p>
+<p>下载：<code class="docutils literal notranslate"><span class="pre">prepare.sh</span></code></p>
+<p>编译：<code class="docutils literal notranslate"><span class="pre">build.sh</span></code></p>
+<p>运行：<code class="docutils literal notranslate"><span class="pre">run.sh</span></code></p>
+<p>验证：<code class="docutils literal notranslate"><span class="pre">verify.sh</span></code></p>
+<p>你也可以参考以下步骤手动部署模型。</p>
+<section id="id5">
+<h3>部署步骤<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<ol>
+<li><p>下载模型依赖</p>
+<p>可以执行以下脚本下载模型依赖：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./prepare.sh
+</pre></div>
+</div>
+<p>若脚本执行失败，也可以通过以下链接手动下载并解压：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://moffett-oss-bucket01.oss-cn-shenzhen.aliyuncs.com/sola-demo/gptj_mlperf/gptj_mlperf.tar.gz
+</pre></div>
+</div>
+</li>
+<li><p>编译部署代码</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build.sh
+</pre></div>
+</div>
+</li>
+<li><p>运行</p>
+<p>可以执行以下脚本运行一段summarize例子：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./run.sh
+</pre></div>
+</div>
+<p>也可以手动运行，指定第一个参数为模型路径：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./build/gptj<span class="w"> </span>&lt;model_path&gt;
+</pre></div>
+</div>
+</li>
+<li><p>验证结果</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./verify.sh
+</pre></div>
+</div>
+</li>
+</ol>
+</section>
+<section id="id6">
+<h3>性能指标参考<a class="headerlink" href="#id6" title="Link to this heading"></a></h3>
+<p>测试环境：</p>
+<ul class="simple">
+<li><p>2x Intel(R) Xeon(R) Platinum 8380 CPU &#64; 2.30GHz</p></li>
+<li><p>16x 64GiB DDR4 3200 MHz</p></li>
+<li><p>24x MOFFETT Antoum 芯片</p></li>
+</ul>
+<p>|    throughput     |    latency     |
+|:—————–:|:————–:|
+| 1532.002 tokens/s | 0.653 ms/token |</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="SOLA-demo-bloom176B-deploy-manual.html" class="btn btn-neutral float-left" title="BLOOM 176B 部署手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="../AI-Native/index.html" class="btn btn-neutral float-right" title="Moffett 云原生" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zhaoyang.li。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>

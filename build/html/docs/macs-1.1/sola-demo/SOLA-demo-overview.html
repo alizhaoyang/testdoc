@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html class="writer-html5" lang="zh-CN" data-content_root="../../../">
+<head>
+  <meta charset="utf-8" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOLA Runtime 示例程序 &mdash; moffettdoc v1.0 文档</title>
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=80d5e7a1" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/my_theme.css?v=5b4135ee" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/css/highlight.css?v=af260240" />
+
+  
+  <!--[if lt IE 9]>
+    <script src="../../../_static/js/html5shiv.min.js"></script>
+  <![endif]-->
+  
+        <script src="../../../_static/jquery.js?v=5d32c60e"></script>
+        <script src="../../../_static/_sphinx_javascript_frameworks_compat.js?v=2cd50e6c"></script>
+        <script src="../../../_static/documentation_options.js?v=5a3fd9cb"></script>
+        <script src="../../../_static/doctools.js?v=888ff710"></script>
+        <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+        <script src="../../../_static/translations.js?v=beaddf03"></script>
+    <script src="../../../_static/js/theme.js"></script>
+    <link rel="index" title="索引" href="../../../genindex.html" />
+    <link rel="search" title="搜索" href="../../../search.html" />
+    <link rel="next" title="ResNet50 部署手册" href="SOLA-demo-ResNet50-deploy-manual.html" />
+    <link rel="prev" title="SOLA示例验证手册" href="index.html" /> 
+</head>
+
+<body class="wy-body-for-nav"> 
+  <div class="wy-grid-for-nav">
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search" >
+
+          
+          
+          <a href="../../../index.html" class="icon icon-home">
+            moffettdoc
+          </a>
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../../search.html" method="get">
+    <input type="text" name="q" placeholder="搜索文档" aria-label="搜索文档" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+        </div><div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="导航菜单">
+              <p class="caption" role="heading"><span class="caption-text">墨芯产品文档</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><a class="reference internal" href="../index.html">MACS系统用户手册</a><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../overview.html">MACS 产品手册</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../release_notes.html">发布日志</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../installation/index.html">安装指南</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tool/index.html">工具</a></li>
+<li class="toctree-l2 current"><a class="reference internal" href="index.html">SOLA示例验证手册</a><ul class="current">
+<li class="toctree-l3 current"><a class="current reference internal" href="#">SOLA Runtime 示例程序</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="#id1">获取源码</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id2">目录与文件说明</a></li>
+<li class="toctree-l4"><a class="reference internal" href="#id3">使用说明</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-ResNet50-deploy-manual.html">ResNet50 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-BERT-deploy-manual.html">BERT 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom7B-deploy-manual.html">BLOOM 7B 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-bloom176B-deploy-manual.html">BLOOM 176B 部署手册</a></li>
+<li class="toctree-l3"><a class="reference internal" href="SOLA-demo-GPT-J6B-deploy-manual.html">GPT-J 6B部署手册</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../AI-Native/index.html">Moffett 云原生</a></li>
+</ul>
+</li>
+</ul>
+
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap"><nav class="wy-nav-top" aria-label="移动版导航菜单" >
+          <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+          <a href="../../../index.html">moffettdoc</a>
+      </nav>
+
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          <div role="navigation" aria-label="页面导航">
+  <ul class="wy-breadcrumbs">
+      <li><a href="../../../index.html" class="icon icon-home" aria-label="Home"></a></li>
+          <li class="breadcrumb-item"><a href="../index.html">MACS系统用户手册</a></li>
+          <li class="breadcrumb-item"><a href="index.html">SOLA示例验证手册</a></li>
+      <li class="breadcrumb-item active">SOLA Runtime 示例程序</li>
+      <li class="wy-breadcrumbs-aside">
+            <a href="../../../_sources/docs/macs-1.1/sola-demo/SOLA-demo-overview.md.txt" rel="nofollow"> 查看页面源码</a>
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+             
+  <section id="sola-runtime">
+<h1>SOLA Runtime 示例程序<a class="headerlink" href="#sola-runtime" title="Link to this heading"></a></h1>
+<p>这个项目包含了 SOLA Runtime API 的示例代码，以及一些模型部署的 Demo，以帮助用户快速上手 SOLA Runtime API。</p>
+<section id="id1">
+<h2>获取源码<a class="headerlink" href="#id1" title="Link to this heading"></a></h2>
+<p>可以从以下链接中获取源码：</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://moffett-oss-bucket01.oss-cn-shenzhen.aliyuncs.com/sola-demo/sola-demo-3.5.0.tar.gz
+</pre></div>
+</div>
+</section>
+<section id="id2">
+<h2>目录与文件说明<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>├── common                  # 公用文件
+├── data                    # 运行一些基础示例所需要的模型文件
+├── inference               # 一个简单的通用推理框架示例
+├── introduction            # SOLA Runtime API的基本用法介绍
+├── models                  # SOLA Runtime API模型部署的demo
+├── utils                   # SOLA Runtime API的一些实用工具
+├── build.sh                # 编译脚本
+├── install_dependencies.sh # 安装系统依赖脚本
+├── prepare.sh              # 下载python环境依赖和系统依赖
+├── CHANGELOG.md            # 更变日志
+├── README.md               # 说明文档
+├── LICENSE                 # 版权信息
+└── VERSION                 # 版本信息
+</pre></div>
+</div>
+</section>
+<section id="id3">
+<h2>使用说明<a class="headerlink" href="#id3" title="Link to this heading"></a></h2>
+<section id="id4">
+<h3>系统要求<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<p>请在 SOLA Toolkit 支持的系统上使用本示例程序。</p>
+<p><strong>注意：当前系统语言环境必须为英文，否则会执行错误，可以执行以下命令将当前shell环境改为英文：</strong></p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span><span class="nb">export</span><span class="w"> </span><span class="nv">LANG</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export</span><span class="w"> </span><span class="nv">LC_ALL</span><span class="o">=</span>en_US.UTF-8
+<span class="nb">export</span><span class="w"> </span><span class="nv">LANGUAGE</span><span class="o">=</span>en_US.UTF-8
+</pre></div>
+</div>
+</section>
+<section id="id5">
+<h3>软件依赖<a class="headerlink" href="#id5" title="Link to this heading"></a></h3>
+<section id="id6">
+<h4>基础系统依赖库（不包含模型部署示例的依赖）<a class="headerlink" href="#id6" title="Link to this heading"></a></h4>
+<p>请自行安装以下第三方依赖：</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">wget</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">tar</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">libgl1</span></code></p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">cmake</span></code> &gt;= 3.10</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">g++</span></code> &gt;= 7.x</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gflags</span></code> &gt;= 2.2</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">SOLA</span> <span class="pre">Toolkit</span></code> == 3.5.0</p></li>
+</ul>
+<p>或执行以下脚本尝试一键安装：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>sh<span class="w"> </span>install_dependencies.sh
+</pre></div>
+</div>
+</section>
+<section id="python">
+<h4>python 环境依赖<a class="headerlink" href="#python" title="Link to this heading"></a></h4>
+<p>我们已经打包好了整个python虚拟环境，可以通过如下命令下载并激活：</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>./prepare.sh
+<span class="nb">source</span><span class="w"> </span>sola-demo-env/bin/activate
+</pre></div>
+</div>
+</section>
+</section>
+<section id="id7">
+<h3>编译运行<a class="headerlink" href="#id7" title="Link to this heading"></a></h3>
+<p>示例程序分为两种，一种是Runtime API的示例，一种是模型部署的示例。</p>
+<p>在根目录下执行 <code class="docutils literal notranslate"><span class="pre">build.sh</span></code>，会编译所有的示例程序，模型部署的示例在各自的目录下也有编译脚本，可以单独编译。</p>
+<p>Runtime API示例程序的编译产物在根目录的 <code class="docutils literal notranslate"><span class="pre">build/bin</span></code> 下，模型示例程序的编译产物在各自的 <code class="docutils literal notranslate"><span class="pre">models/xxx/build</span></code> 下。</p>
+<p>执行Runtime API的示例程序，可以直接在根目录下执行，如：</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>./build/bin/device_query
+</pre></div>
+</div>
+<p>执行模型部署的示例程序，需要参考每个模型目录中的 <code class="docutils literal notranslate"><span class="pre">README.md</span></code> 。通常情况下，模型的部署都需要下载模型和数据文件，以及配置运行环境，所以基本都有 <code class="docutils literal notranslate"><span class="pre">prepare.sh</span></code>、<code class="docutils literal notranslate"><span class="pre">build.sh</span></code>、<code class="docutils literal notranslate"><span class="pre">run.sh</span></code>、<code class="docutils literal notranslate"><span class="pre">verify.sh</span></code> 这几个脚本。</p>
+<p><code class="docutils literal notranslate"><span class="pre">prepare.sh</span></code> 用于下载模型文件、数据预处理以及配置运行环境。</p>
+<p><code class="docutils literal notranslate"><span class="pre">build.sh</span></code> 用于编译模型部署的示例程序。</p>
+<p><code class="docutils literal notranslate"><span class="pre">run.sh</span></code> 用于执行模型部署的示例程序。</p>
+<p><code class="docutils literal notranslate"><span class="pre">verify.sh</span></code> 用于验证模型部署的示例程序的运行结果。</p>
+</section>
+</section>
+</section>
+
+
+           </div>
+          </div>
+          <footer><div class="rst-footer-buttons" role="navigation" aria-label="页脚">
+        <a href="index.html" class="btn btn-neutral float-left" title="SOLA示例验证手册" accesskey="p" rel="prev"><span class="fa fa-arrow-circle-left" aria-hidden="true"></span> 上一页</a>
+        <a href="SOLA-demo-ResNet50-deploy-manual.html" class="btn btn-neutral float-right" title="ResNet50 部署手册" accesskey="n" rel="next">下一页 <span class="fa fa-arrow-circle-right" aria-hidden="true"></span></a>
+    </div>
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>&#169; 版权所有 2024, zhaoyang.li。</p>
+  </div>
+
+  利用 <a href="https://www.sphinx-doc.org/">Sphinx</a> 构建，使用的 
+    <a href="https://github.com/readthedocs/sphinx_rtd_theme">主题</a>
+    由 <a href="https://readthedocs.org">Read the Docs</a> 开发.
+   
+
+</footer>
+        </div>
+      </div>
+    </section>
+  </div>
+  <script>
+      jQuery(function () {
+          SphinxRtdTheme.Navigation.enable(true);
+      });
+  </script> 
+
+</body>
+</html>
