@@ -17,9 +17,9 @@
 
 # -- Project information -----------------------------------------------------
 
-project = 'Stream Computing Documentation'
-copyright = '2024, Stream Computing Inc.'
-author = 'Stream Computing Inc.'
+project = 'MoffettDoc'
+copyright = '2024, Moffett Inc.'
+author = 'MOffett Inc.'
 
 
 # -- General configuration ---------------------------------------------------
@@ -53,7 +53,7 @@ exclude_patterns = []
 #
 # html_theme = 'alabaster'
 html_theme = 'sphinx_rtd_theme'
-html_style = ['css/my_theme.css','css/pyg.css']
+html_style = ['css/my_theme.css','css/pyg.css','css/highlight.css']
 
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,

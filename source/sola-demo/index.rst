@@ -3,16 +3,16 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MACS系统用户手册
+SOLA示例验证手册
 ============================================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
+   
 
-   overview.md
-   release_notes.md
-   installation/index
-   tool/index
-   sola-demo/index
-   AI-Native/index
+   SOLA-demo-overview.md
+   SOLA-demo-ResNet50-deploy-manual.md
+   SOLA-demo-BERT-deploy-manual.md
+   SOLA-demo-bloom7B-deploy-manual.md
+   SOLA-demo-bloom176B-deploy-manual.md
+   SOLA-demo-GPT-J6B-deploy-manual.md

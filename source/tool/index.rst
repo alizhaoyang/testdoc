@@ -3,16 +3,12 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-MACS系统用户手册
+工具
 ============================================
 
 .. toctree::
    :maxdepth: 1
-   :caption: Contents:
-
-   overview.md
-   release_notes.md
-   installation/index
-   tool/index
-   sola-demo/index
-   AI-Native/index
+   
+   mx-mft-userguide.md
+   qual-userguide.md
+   smi-userguide.md
