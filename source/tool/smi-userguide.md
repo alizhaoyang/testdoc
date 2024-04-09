@@ -8,6 +8,13 @@ MOFFETT System Management Interface (mx-smi) 是一个基于 MOFFETT Management 
 
 MX-SMI 目前支持在安装了 SOLA 工具包 (SOLA Toolkit) 的 Linux 系统上运行，并以纯文本的形式将相关信息输出到标准输出中。
 
+| **子命令** | **说明**                                                     |
+| ---------- | ------------------------------------------------------------ |
+| list       | 以设备 (Device) 为单位输出概览信息，若是单卡多设备的产品（例如 S30），会标注位于同一张卡的设备。选项列表如下：<无选项> : 默认输出所有设备的概览信息。-i, –index : 用于指定设备id (device index)，可使用以下格式输入：空格分隔 : -i 0 1 2花括号中用逗号分隔 (以列表的形式传入) : -i {0,1,2} |
+| query      | 输出设备详细信息。选项列表如下：<无选项> : 默认输出所有设备信息-i, –index : 用于指定设备id (device index)，可使用以下格式输入：空格分隔 : -i 0 1 2花括号中用逗号分隔 (以列表的形式传入) : -i {0,1,2}-d, –display : 用于指定查询类型，并输出相关信息。可接受的参数 (不限定大小写)如下：MEMORY:设备内存信息UTILIZATION - 使用率信息TEMPERATURE - 温度信息POWER - 功率信息FREQUENCY - 频率信息VOLTAGE - 电压信息PIDS - 进程信息ECC - ECC信息 |
+| select     | 按指定的内容和顺序，输出设备属性信息。默认第一行展示输出的属性名。后续每一行为用户指定的设备的属性信息。选项列表如下：-f, –field : **必选项** 用于指定需要输出的属性值，会按指定的顺序输出可接受的参数列表 (不限定大小写)：timestamp - 输出当前时间戳，格式为 “2006-01-02 15:04:05”driver_version - 驱动版本sola_version - SOLA版本count - 检测到的设备（Devices）数量index - 设备ID （根据Bus ID生成）name - 设备名称（产品名称）cores - 设备核心数量firmware_version - 固件版本mcu_version - MCU版本serial - 序列号(同一张卡拥有相同序列号，不同卡的序列号不同)uuid - UUID (每个设备全局唯一ID)board - 主板IDpci.bus - 16进制输出 PCI buspci.device - 16进制输出 PCI devicepci.domain - 16进制输出 PCI domainpci.bus_id - 16进制输出 PCI bus id，格式为 “domain:bus:device.function”pci.device_id - 16进制输出 PCI vendor device idpci.sub_device_id - 16进制输出 PCI Sub System idmemory.total - SPU总内存(单位:MiB)memory.reserved - SPU预留内存(单位:MiB)memory.used - SPU已使用内存(单位:MiB)memory.free - SPU总空闲内存(单位:MiB)utilization - 使用率(各核心上的平均使用率)ecc.errors.corrected.volatile.device_memory - 已纠正的易失性设备内存错误数量ecc.errors.corrected.aggregate.device_memory - 已纠正的聚合设备内存错误数量ecc.errors.uncorrected.volatile.device_memory - 未纠正的易失性设备内存错误数量ecc.errors.uncorrected.aggregate.device_memory - 未纠正的聚合设备内存错误数量temperature - 温度(单位:℃)power.draw - 当前功率(单位:W)power.limit - 最大功率(单位:W)frequency - 频率(单位:MHz)volatile - 电压(单位:mV)可使用以下格式输入空格分隔 : -q index pci.bus_id花括号中用逗号分隔 (以列表的形式传入) : -q {index,pci.bus_id}-i, –index : 用于指定设备id (device index)，可使用以下格式输入空格分隔 : -i 0 1 2花括号中用逗号分隔 (以列表的形式传入) : -i {0,1,2}–noheader : 不输出属性名表头 |
+| reboot     | 重启指定的设备并加载固件。执行此操作需要获取sudo权限。选项列表如下：选项组 target devices ： 以下选项至少传入一项-i, –index : 用于指定设备id (device index)，可使用以下格式输入：空格分隔 : -i 0 1 2花括号中用逗号分隔 (以列表的形式传入) : -i {0,1,2}–all : 直接指定所有设备 |
+
 ## 命令手册
 
 * 命令格式：mx-smi [选项] [子命令]
