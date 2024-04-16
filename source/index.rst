@@ -16,4 +16,3 @@ MACS系统用户手册
    tool/index
    sola-demo/index
    AI-Native/index
-   installation/index
