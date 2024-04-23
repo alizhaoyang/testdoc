@@ -29,6 +29,8 @@ Another use case for this is when you have a module with a C extension.
 
 ```
 
+ <p class="note">说明：这是一个需要说明的段落。</p>
+
 ## 定义
 
 ## 主要组件版本
