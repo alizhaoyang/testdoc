@@ -1,15 +1,19 @@
 # 发布日志
 
-<p class="attention">测试1：这是一个需要注意的段落。</p>
+<p class="attention">注意：这是一个需要注意的段落。</p>
 
-<p class="danger">测试1：危险，一定要看。</p>
+<p class="danger">警告：危险，一定要看。</p>
 
-> <p class="note">说明
-> 测试1：这是一个需要说明的段落。</p>
+ <p class="note">说明：这是一个需要说明的段落。</p>
+
 
 ## MACS 发布说明
 
 发布日志中包含了 MACS 中各个组件当前版本以及历史版本的更新说明。
+
+Note
+
+Another use case for this is when you have a module with a C extension.
 
 ## 文档目标
 
