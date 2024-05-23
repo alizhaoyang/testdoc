@@ -233,7 +233,7 @@ $ sudo sh sola_<version>_<architecture>.run --driver
    $ sudo sola-uninstall --all
   ```
 
-## 其他扩展语法test
+## 其他扩展语法test你好啊
 
 ### Markdown 中直接插入 rst
 
