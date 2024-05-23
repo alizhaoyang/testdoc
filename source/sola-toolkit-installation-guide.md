@@ -20,6 +20,8 @@ $ lspci | grep 1f36
 
 如果您的系统上没有`lspci`命令，请执行以下命令安装 `pciutils` 软件包：
 
+
+
 <p class="attention">注意：执行以下命令时，需获取 sudo 权限。</p>
 
 > **注意：**执行以下命令时，需获取 sudo 权限。
@@ -230,3 +232,29 @@ $ sudo sh sola_<version>_<architecture>.run --driver
    # 指定卸载所有版本
    $ sudo sola-uninstall --all
   ```
+
+## 其他扩展语法test
+
+### Markdown 中直接插入 rst
+
+````markdown
+```rst
+<your raw rst text here>
+```
+````
+
+举例
+
+````markdown
+```rst
+.. note::
+  This is a note.
+```
+````
+
+```rst
+.. note::
+  This is a note.
+```
+
+### 交叉引用
