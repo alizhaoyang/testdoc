@@ -6,6 +6,8 @@
 
  <p class="note">说明：这是一个需要说明的段落。</p>
 
+<p class="notes">shuoming</p>
+
 
 ## MACS 发布说明
 
