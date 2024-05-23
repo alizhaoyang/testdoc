@@ -133,6 +133,9 @@ $ uname -r
 
 SOLA 可以使用多种方式安装，具体取决于您所使用的 Linux 发行版。下文将为您详细介绍几种主流的发行版的安装方式。
 
+<p class="attention">注意：使用 Debian 软件包或 RPM 软件包安装时，默认您同意最终用户许可协议，协议内容可在[墨芯官网文档中心](https://docs.moffettai.com/)查看。
+使用 Runfile 软件包安装时，需要您手动同意最终用户许可协议。</p>
+
 > **注意**：
 >
 > - 使用 Debian 软件包或 RPM 软件包安装时，默认您同意最终用户许可协议，协议内容可在[墨芯官网文档中心](https://docs.moffettai.com/)查看。
@@ -206,6 +209,10 @@ $ sudo sh sola_<version>_<architecture>.run --driver
   ```
 
   > **注意**：如果在您的系统中执行卸载命令时，系统提示存在多个版本的 SOLA Toolkit，您可以通过执行 `sudo rpm -e sola-<version>.<architecture>` 命令来单独卸载指定版本的 SOLA Toolkit。这个命令会将指定版本的 SOLA Toolkit 从 RPM 数据库中移除。请注意，只有在最后一个版本被卸载时，RPM 才会执行 SOLA Toolkit 的卸载脚本，彻底清理所有已安装版本的 SOLA Toolkit 相关文件和设置。
+
+  
+
+  <p class="attention">注意：如果在您的系统中执行卸载命令时，系统提示存在多个版本的 SOLA Toolkit，您可以通过执行 sudo rpm -e sola-<version>.<architecture> 命令来单独卸载指定版本的 SOLA Toolkit。这个命令会将指定版本的 SOLA Toolkit 从 RPM 数据库中移除。请注意，只有在最后一个版本被卸载时，RPM 才会执行 SOLA Toolkit 的卸载脚本，彻底清理所有已安装版本的 SOLA Toolkit 相关文件和设置。</p>
 
 - 如果您是使用 Deb 软件包方式安装的 SOLA ，可执行以下命令卸载 SOLA：
 
