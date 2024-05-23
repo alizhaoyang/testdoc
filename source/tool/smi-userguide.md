@@ -375,3 +375,29 @@ package boot image version info:
     build time: Mar  4 2024 14:27:08
 reboot finished: success 6, failed 0, skip 0
 ```
+
+## 其他扩展语法test你好啊
+
+### Markdown 中直接插入 rst
+
+````markdown
+```rst
+<your raw rst text here>
+```
+````
+
+举例
+
+````markdown
+```rst
+.. note::
+  This is a note.
+```
+````
+
+```rst
+.. note::
+  This is a note.
+```
+
+### 
