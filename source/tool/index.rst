@@ -9,6 +9,6 @@
 .. toctree::
    :maxdepth: 1
    
-   mx-mft-userguide.md
+   mx-mft-userguide.rst
    qual-userguide.md
    smi-userguide.md
