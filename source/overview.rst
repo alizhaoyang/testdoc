@@ -1,5 +1,14 @@
 # MACS 产品手册
 
+```rst
+.. note::  
+ 
+   这是一个高亮显示的注意事项。  
+
+```
+
+
+
 ## 概述
 
 MACS（Moffett Advaned Computing System）是墨芯专为墨芯 AI 加速卡打造的一套 AI 计算加速系统，可以在墨芯 AI 加速卡上部署高性能模型推理应用。该系统主要包含 SOLA ToolKit（包含 AI 加速卡驱动和固件、SOLA Runtime API以及一些工具）。

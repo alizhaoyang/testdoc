@@ -10,7 +10,7 @@ MACS系统用户手册
    :maxdepth: 1
    :caption: Contents:
 
-   overview.md
+   overview.rst
    release_notes.md
    sola-toolkit-installation-guide.md
    tool/index
